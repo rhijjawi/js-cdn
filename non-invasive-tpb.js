@@ -1,4 +1,4 @@
-document.addEventListener("DOMContentLoaded", function(event) {
+
     var server = "http://thepiratebay.ramzihijjawi.me/apip";
     var static_server = "http://thepiratebay.ramzihijjawi.me/torrindexp";
     function jswarnclear() {
@@ -702,85 +702,85 @@ document.addEventListener("DOMContentLoaded", function(event) {
             }
             if (pages - curpage - 10 > 5) {
                 document.write("... ");
-                print_selector_number(pages - 2, curpage, linkto);
-                print_selector_number(pages - 1, curpage, linkto);
-                print_selector_number(pages, curpage, linkto);
-            }
-        }
-        document.write("<br />\n");
-    }
-    function filter_list() {
-        let input, filter, ul, li, a, i, txtValue;
-        input = document.getElementById("flist");
-        filter = input.value.toUpperCase();
-        li = document.getElementsByClassName("list-entry");
-        for (i = 0; i < li.length; i++) {
-            a = li[i].getElementsByTagName("span")[1];
-            txtValue = a.textContent || a.innerText;
-            if (txtValue.toUpperCase().indexOf(filter) > -1) {
-                li[i].style.display = "";
-            } else {
-                li[i].style.display = "none";
-            }
+            print_selector_number(pages - 2, curpage, linkto);
+            print_selector_number(pages - 1, curpage, linkto);
+            print_selector_number(pages, curpage, linkto);
         }
     }
-    function filter_list2() {
-        let input, filter, ul, li, a, i, txtValue;
-        let f1, f2, f3, f4, f5, f6, f7, f8, f9, f10;
-        let show,
-            qshow,
-            txtv,
-            do_qshow = 1;
-        if (document.getElementById("f_480p").checked) f1 = "480P";
-        else f1 = "";
-        if (document.getElementById("f_720p").checked) f2 = "720P";
-        else f2 = "";
-        if (document.getElementById("f_1080p").checked) f3 = "1080P";
-        else f3 = "";
-        if (document.getElementById("f_2160p").checked) f4 = "2160P";
-        else f4 = "";
-        if (document.getElementById("f_x264").checked) f5 = "X264";
-        else f5 = "";
-        if (document.getElementById("f_h264").checked) f6 = "H264";
-        else f6 = "";
-        if (document.getElementById("f_x265").checked) f7 = "X265";
-        else f7 = "";
-        if (document.getElementById("f_h265").checked) f8 = "H265";
-        else f8 = "";
-        if (document.getElementById("f_hdr").checked) f9 = "HDR ";
-        else f9 = "";
-        if (document.getElementById("f_hevc").checked) f10 = "HEVC";
-        else f10 = "";
-        if (f1.length == 0 && f2.length == 0 && f3.length == 0 && f4.length == 0 && f5.length == 0 && f6.length == 0 && f7.length == 0 && f8.length == 0 && f9.length == 0 && f10.length == 0) do_qshow = 0;
-        input = document.getElementById("flist");
-        filter = input.value.toUpperCase();
-        li = document.getElementsByClassName("list-entry");
-        for (i = 0; i < li.length; i++) {
-            show = 0;
-            qshow = 0;
-            a = li[i].getElementsByTagName("span")[1];
-            txtv = a.textContent || a.innerText;
-            txtValue = txtv.toUpperCase();
-            if (do_qshow) {
-                if (f1.length > 0) if (txtValue.indexOf(f1, 0) !== -1) qshow = 1;
-                if (f2.length > 0) if (txtValue.indexOf(f2, 0) !== -1) qshow = 1;
-                if (f3.length > 0) if (txtValue.indexOf(f3, 0) !== -1) qshow = 1;
-                if (f4.length > 0) if (txtValue.indexOf(f4, 0) !== -1) qshow = 1;
-                if (f5.length > 0) if (txtValue.indexOf(f5, 0) !== -1) qshow = 1;
-                if (f6.length > 0) if (txtValue.indexOf(f6, 0) !== -1) qshow = 1;
-                if (f7.length > 0) if (txtValue.indexOf(f7, 0) !== -1) qshow = 1;
-                if (f8.length > 0) if (txtValue.indexOf(f8, 0) !== -1) qshow = 1;
-                if (f9.length > 0) if (txtValue.indexOf(f9, 0) !== -1) qshow = 1;
-                if (f10.length > 0) if (txtValue.indexOf(f10, 0) !== -1) qshow = 1;
-            } else {
-                qshow = 1;
-            }
-            if (txtValue.indexOf(filter) > -1) show = 1;
-            if (qshow == 1 && show == 1) {
-                li[i].style.display = "";
-            } else {
-                li[i].style.display = "none";
-            }
+    document.write("<br />\n");
+}
+function filter_list() {
+    let input, filter, ul, li, a, i, txtValue;
+    input = document.getElementById("flist");
+    filter = input.value.toUpperCase();
+    li = document.getElementsByClassName("list-entry");
+    for (i = 0; i < li.length; i++) {
+        a = li[i].getElementsByTagName("span")[1];
+        txtValue = a.textContent || a.innerText;
+        if (txtValue.toUpperCase().indexOf(filter) > -1) {
+            li[i].style.display = "";
+        } else {
+            li[i].style.display = "none";
         }
     }
-})
+}
+function filter_list2() {
+    let input, filter, ul, li, a, i, txtValue;
+    let f1, f2, f3, f4, f5, f6, f7, f8, f9, f10;
+    let show,
+        qshow,
+        txtv,
+        do_qshow = 1;
+    if (document.getElementById("f_480p").checked) f1 = "480P";
+    else f1 = "";
+    if (document.getElementById("f_720p").checked) f2 = "720P";
+    else f2 = "";
+    if (document.getElementById("f_1080p").checked) f3 = "1080P";
+    else f3 = "";
+    if (document.getElementById("f_2160p").checked) f4 = "2160P";
+    else f4 = "";
+    if (document.getElementById("f_x264").checked) f5 = "X264";
+    else f5 = "";
+    if (document.getElementById("f_h264").checked) f6 = "H264";
+    else f6 = "";
+    if (document.getElementById("f_x265").checked) f7 = "X265";
+    else f7 = "";
+    if (document.getElementById("f_h265").checked) f8 = "H265";
+    else f8 = "";
+    if (document.getElementById("f_hdr").checked) f9 = "HDR ";
+    else f9 = "";
+    if (document.getElementById("f_hevc").checked) f10 = "HEVC";
+    else f10 = "";
+    if (f1.length == 0 && f2.length == 0 && f3.length == 0 && f4.length == 0 && f5.length == 0 && f6.length == 0 && f7.length == 0 && f8.length == 0 && f9.length == 0 && f10.length == 0) do_qshow = 0;
+    input = document.getElementById("flist");
+    filter = input.value.toUpperCase();
+    li = document.getElementsByClassName("list-entry");
+    for (i = 0; i < li.length; i++) {
+        show = 0;
+        qshow = 0;
+        a = li[i].getElementsByTagName("span")[1];
+        txtv = a.textContent || a.innerText;
+        txtValue = txtv.toUpperCase();
+        if (do_qshow) {
+            if (f1.length > 0) if (txtValue.indexOf(f1, 0) !== -1) qshow = 1;
+            if (f2.length > 0) if (txtValue.indexOf(f2, 0) !== -1) qshow = 1;
+            if (f3.length > 0) if (txtValue.indexOf(f3, 0) !== -1) qshow = 1;
+            if (f4.length > 0) if (txtValue.indexOf(f4, 0) !== -1) qshow = 1;
+            if (f5.length > 0) if (txtValue.indexOf(f5, 0) !== -1) qshow = 1;
+            if (f6.length > 0) if (txtValue.indexOf(f6, 0) !== -1) qshow = 1;
+            if (f7.length > 0) if (txtValue.indexOf(f7, 0) !== -1) qshow = 1;
+            if (f8.length > 0) if (txtValue.indexOf(f8, 0) !== -1) qshow = 1;
+            if (f9.length > 0) if (txtValue.indexOf(f9, 0) !== -1) qshow = 1;
+            if (f10.length > 0) if (txtValue.indexOf(f10, 0) !== -1) qshow = 1;
+        } else {
+            qshow = 1;
+        }
+        if (txtValue.indexOf(filter) > -1) show = 1;
+        if (qshow == 1 && show == 1) {
+            li[i].style.display = "";
+        } else {
+            li[i].style.display = "none";
+        }
+    }
+}
+
