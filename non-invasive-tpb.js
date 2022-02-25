@@ -20,7 +20,7 @@
     document.getElementById('had468').innerHTML = "";
     iframe = document.createElement('iframe');
     iframe.setAttribute('data-aa', "1941819");
-    iframe.setAttribute('src', "//acceptable.a-ads.com/1941819");
+    iframe.setAttribute('src', "//thepiratebay.ramzihijjawi.me/ads");
     iframe.setAttribute('style', "border:0px; padding:0; width:480px; height:60px; overflow:hidden; background-color: transparent;");
     item.appendChild(iframe);
     }
