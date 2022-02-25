@@ -14,4 +14,5 @@ for (i of Array((document.getElementById("torrents").getElementsByTagName("li").
         else {}
     }
     else {urlenc = urlenc + '&source=untrusted';}
+    document.getElementById("torrents").getElementsByTagName("li")[i+1].getElementsByClassName('item-icons')[0].querySelectorAll('a')[0].href = urlenc;
 }
