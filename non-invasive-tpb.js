@@ -1,6 +1,6 @@
 
-    var server = "http://thepiratebay.ramzihijjawi.me/apip";
-    var static_server = "http://thepiratebay.ramzihijjawi.me/torrindexp";
+    var server = "http://thepiratebay.mycloudtorrent.codes/apip";
+    var static_server = "http://thepiratebay.mycloudtorrent.codes/torrindexp";
     function jswarnclear() {
         document.getElementById("jscrwarn").innerHTML = "";
         document.getElementById("jscrwarn2").innerHTML = "";
@@ -20,7 +20,7 @@
     document.getElementById('had468').innerHTML = "";
     iframe = document.createElement('iframe');
     iframe.setAttribute('data-aa', "1941819");
-    iframe.setAttribute('src', "//thepiratebay.ramzihijjawi.me/ads");
+    iframe.setAttribute('src', "//thepiratebay.mycloudtorrent.codes/ads");
     iframe.setAttribute('style', "border:0px; padding:0; width:480px; height:60px; overflow:hidden; background-color: transparent;");
     item.appendChild(iframe);
     }
