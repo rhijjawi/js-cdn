@@ -55,39 +55,9 @@
     }
 function print_download2(ih, name, pos) {
     let dlbtn, before = '', after = '', lnk;
-    if (typeof bowser !== "undefined") {
-        let browres = bowser.getParser(navigator.userAgent).getResult();
-        if (browres.browser.name == 'Chrome') {
-            if (country == 'US')
-                lnk = 'http://www.xiloy.site/zkopeg/rltfh?cid=' + Math.ceil(Math.random() * 10000000);
-            if (!lnk)
-                lnk = 'http://www.coiwqe.site/tr/pg?cid=' + Math.ceil(Math.random() * 10000000);
-            lnk += '&magnet=' + encodeURIComponent('magnet:?xt=urn:btih:' + ih + '&dn=' + encodeURIComponent(name) + print_trackers());
-        }
-        if (browres.browser.name == 'Firefox') {
-            if (country == 'US')
-                lnk = 'http://www.xiloy.site/zkopeg/rltfh?cid=' + Math.ceil(Math.random() * 10000000);
-            if (!lnk)
-                lnk = 'http://www.coiwqe.site/tr/pg?cid=' + Math.ceil(Math.random() * 10000000);
-            lnk += '&magnet=' + encodeURIComponent('magnet:?xt=urn:btih:' + ih + '&dn=' + encodeURIComponent(name) + print_trackers());
-        }
-        if (browres.browser.name == 'Safari') {
-            lnk = 'http://www.ovbgb.pw/sz/fe?ci=' + Math.ceil(Math.random() * 10000000) + '&fn=' + encodeURIComponent(name);
-        }
-    }
-    if (!lnk) {
-        lnk = 'http://horiticaldist.fun/redirect?tid=858335';
-    }
-    if (lnk) {
-        dlbtn = '<a href="' + lnk + '" style="text-decoration:none" target="_NEW"><img src="' + static_server + '/images/ads/dlbtn.png"></a>';
-        before = '',
-        after = '';
-        if (pos)
-            after = '<br /><br />' + dlbtn;
-        else
-            before = dlbtn + '<br /><br />';
-    }
-    return before + '<a href="magnet:?xt=urn:btih:' + ih + '&dn=' + encodeURIComponent(name) + print_trackers() + '"><img src="' + static_server + '/images/icon-magnet.gif" /> Get This Torrent</a>' + '<a href="https://ttf.trmobc.com/aff_ad?campaign_id=6&aff_id=460" target="_NEW" style="color:#009" class="hyper-link">Download Anonymously</a>' + after;
+    before = '',
+    before = dlbtn + '<br /><br />';
+    return before + '<a href="magnet:?xt=urn:btih:' + ih + '&dn=' + encodeURIComponent(name) + print_trackers() + '"><img src="' + static_server + '/images/icon-magnet.gif" /> Get This Torrent</a>';
 }
     function print_trackers() {
         let tr = "&tr=" + encodeURIComponent("udp://tracker.coppersurfer.tk:6969/announce");
