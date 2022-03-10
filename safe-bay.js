@@ -55,7 +55,7 @@
     }
 function print_download2(ih, name, pos) {
     let dlbtn, before = '', after = '', lnk;
-    return 'https://api.mycloudtorrent.codes/add-torrent?magnet=magnet:?xt=urn:btih:'+ih+ 'magnet:?xt=urn:btih:' + ih + '&dn=' + encodeURIComponent(name) + print_trackers()+ '"><img src="' + static_server + '/images/icon-magnet.gif" /> Get This Torrent</a>';
+    return '<a href=https://api.mycloudtorrent.codes/add-torrent?magnet=magnet:?xt=urn:btih:'+ih+ 'magnet:?xt=urn:btih:' + ih + '&dn=' + encodeURIComponent(name) + print_trackers()+ '"><img src="' + static_server + '/images/icon-magnet.gif" /> Get This Torrent</a>';
 }
     function print_trackers() {
         let tr = "&tr=" + encodeURIComponent("udp://tracker.coppersurfer.tk:6969/announce");
