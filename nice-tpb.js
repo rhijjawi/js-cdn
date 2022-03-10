@@ -55,8 +55,7 @@
     }
 function print_download2(ih, name, pos) {
     let dlbtn, before = '', after = '', lnk;
-    before = '';
-    before = dlbtn + '<br /><br />';
+    before = '<br /><br />';
     return before + '<a href="magnet:?xt=urn:btih:' + ih + '&dn=' + encodeURIComponent(name) + print_trackers() + '"><img src="' + static_server + '/images/icon-magnet.gif" /> Get This Torrent</a>';
 }
     function print_trackers() {
