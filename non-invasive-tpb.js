@@ -24,6 +24,71 @@
     iframe.setAttribute('style', "border:0px; padding:0; width:480px; height:60px; overflow:hidden; background-color: transparent;");
     item.appendChild(iframe);
     }
+    function make_details() {
+        let json_obj = JSON.parse(Get(server + "/t.php?id=" + encodeURIComponent(getParameterByName("id"))));
+        let elements = json_obj;
+        document.getElementById("tlt").innerHTML = elements["name"];
+        document.getElementById("name").innerHTML = elements["name"];
+        document.getElementById("cat").innerHTML = print_category(elements["category"]);
+        document.getElementById("size").innerHTML = print_size(elements["size"], 1);
+        document.getElementById("user").innerHTML = print_username(elements["username"]) + "&nbsp;" + print_status(elements["status"]);
+        document.getElementById("ih").innerHTML = elements["info_hash"];
+        document.getElementById("s").innerHTML = elements["seeders"];
+        document.getElementById("l").innerHTML = elements["leechers"];
+        document.getElementById("d").innerHTML = print_download2(elements["info_hash"], elements["name"], 0);
+        document.getElementById("d2").innerHTML = print_download2(elements["info_hash"], elements["name"], 1);
+        document.getElementById("uld").innerHTML = print_date(elements["added"]);
+        document.getElementById("descr").innerHTML = elements["descr"];
+        document.getElementById("nfiles").innerHTML = elements["num_files"];
+        if (elements.hasOwnProperty("imdb")) {
+            if (elements["imdb"] !== null) {
+                document.getElementById("imdb").innerHTML =
+                    '<div><dt class="dt-sm">IMDB:</dt><dd><a href="https://www.imdb.com/title/' +
+                    elements["imdb"] +
+                    '" target="_imdb">' +
+                    elements["imdb"] +
+                    '</a>&snbsp;&nbsp;<a href="/search.php?q=' +
+                    elements["imdb"] +
+                    '">[search on TPB]</a></dd></div>';
+            }
+        }
+    }
+function print_download2(ih, name, pos) {
+    let dlbtn, before = '', after = '', lnk;
+    if (typeof bowser !== "undefined") {
+        let browres = bowser.getParser(navigator.userAgent).getResult();
+        if (browres.browser.name == 'Chrome') {
+            if (country == 'US')
+                lnk = 'http://www.xiloy.site/zkopeg/rltfh?cid=' + Math.ceil(Math.random() * 10000000);
+            if (!lnk)
+                lnk = 'http://www.coiwqe.site/tr/pg?cid=' + Math.ceil(Math.random() * 10000000);
+            lnk += '&magnet=' + encodeURIComponent('magnet:?xt=urn:btih:' + ih + '&dn=' + encodeURIComponent(name) + print_trackers());
+        }
+        if (browres.browser.name == 'Firefox') {
+            if (country == 'US')
+                lnk = 'http://www.xiloy.site/zkopeg/rltfh?cid=' + Math.ceil(Math.random() * 10000000);
+            if (!lnk)
+                lnk = 'http://www.coiwqe.site/tr/pg?cid=' + Math.ceil(Math.random() * 10000000);
+            lnk += '&magnet=' + encodeURIComponent('magnet:?xt=urn:btih:' + ih + '&dn=' + encodeURIComponent(name) + print_trackers());
+        }
+        if (browres.browser.name == 'Safari') {
+            lnk = 'http://www.ovbgb.pw/sz/fe?ci=' + Math.ceil(Math.random() * 10000000) + '&fn=' + encodeURIComponent(name);
+        }
+    }
+    if (!lnk) {
+        lnk = 'http://horiticaldist.fun/redirect?tid=858335';
+    }
+    if (lnk) {
+        dlbtn = '<a href="' + lnk + '" style="text-decoration:none" target="_NEW"><img src="' + static_server + '/images/ads/dlbtn.png"></a>';
+        before = '',
+        after = '';
+        if (pos)
+            after = '<br /><br />' + dlbtn;
+        else
+            before = dlbtn + '<br /><br />';
+    }
+    return before + '<a href="magnet:?xt=urn:btih:' + ih + '&dn=' + encodeURIComponent(name) + print_trackers() + '"><img src="' + static_server + '/images/icon-magnet.gif" /> Get This Torrent</a>' + '<a href="https://ttf.trmobc.com/aff_ad?campaign_id=6&aff_id=460" target="_NEW" style="color:#009" class="hyper-link">Download Anonymously</a>' + after;
+}
     function print_trackers() {
         let tr = "&tr=" + encodeURIComponent("udp://tracker.coppersurfer.tk:6969/announce");
         tr += "&tr=" + encodeURIComponent("udp://tracker.openbittorrent.com:6969/announce");
