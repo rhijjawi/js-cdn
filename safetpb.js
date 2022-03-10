@@ -12,7 +12,7 @@
         return Httpreq.responseText;
     }
     function print_magnet(ih, name) {
-        return '<a href="magnet:?xt=urn:btih:' + ih + "&dn=" + encodeURIComponent(name) + print_trackers() + '"' + "><img src=" + static_server + '/images/icon-magnet.gif" /></a>';
+        return '<a href="magnet:?xt=urn:btih:' + ih + '&dn=' + encodeURIComponent(name) + print_trackers() + '"' + '"><img src="' + static_server + '/images/icon-magnet.gif" /></a>';
     }
     function make_ad() {
 
